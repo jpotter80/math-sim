@@ -1,0 +1,59 @@
+# Project files
+project.md 
+pseudo.md 
+notes.md 
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Poetry
+poetry.lock
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Project specific
+data/
+output/
+logs/
+*.log
+*.csv
+*.json
+*.png
+*.jpg
+*.pdf
+
+# Simulation specific
+*.npy
+*.npz
+*.mat
+*.hdf5
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Large files (adjust size as needed)
+# Uncomment the following line if you want to ignore all files larger than 100MB
+# **/[0-9][0-9][0-9]MB*
