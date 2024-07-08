@@ -1,13 +1,26 @@
-# Math-Sim: Mathematical Simulations with Resource Monitoring
+# Math-Sim: Mathematical Simulations with Concurrent Processing
 
-Math-Sim is a Python project that combines mathematical simulations, particularly in number theory, with resource monitoring capabilities. It provides tools to run algorithms while tracking and visualizing memory usage.
+Math-Sim is a Python project that combines mathematical simulations, particularly in number theory, with resource monitoring capabilities. It provides tools to run algorithms while tracking and visualizing memory and CPU usage, with a focus on efficiency, safety, and robustness.
 
 ## Features
 
-- Implementation of number theory algorithms (currently featuring aliquot sequences)
-- Real-time memory usage monitoring
-- Visualization of memory usage over time
-- Extensible architecture for adding more mathematical simulations
+- Implementation of number theory algorithms:
+  - Aliquot sequences
+  - Sieve of Eratosthenes for prime number generation
+  - Integer factorization
+- Real-time resource monitoring (memory and CPU usage)
+- Concurrent execution of algorithms for improved performance
+- Visualization of resource usage over time
+- Comprehensive test suite with timeout mechanisms
+
+## New: Concurrency Support
+
+We're excited to announce that Math-Sim now supports concurrent execution of algorithms. This new feature allows for:
+
+- Parallel processing of multiple algorithms
+- Improved performance on multi-core systems
+- Enhanced responsiveness in the upcoming GUI
+- More efficient resource utilization
 
 ## Installation
 
@@ -26,13 +39,14 @@ Ensure you have Python 3.12+ and Poetry installed on your system. Then follow th
 
 ## Usage
 
-To run the aliquot sequence simulation:
+To run a concurrent simulation:
 
-```
-poetry run python math_sim/resource_monitor.py
-```
+```python
+from math_sim.concurrent_math_sim import run_concurrent_simulations
 
-This will generate an aliquot sequence and save a plot of the memory usage as 'memory_usage_plot.png'.
+results = run_concurrent_simulations(aliquot_input=220, sieve_input=100, factorize_input=84)
+print(results)
+```
 
 ## Running Tests
 
@@ -42,22 +56,22 @@ To run the test suite:
 poetry run pytest
 ```
 
-## Project Structure
-
-- `math_sim/`: Main package directory
-  - `resource_monitor.py`: Contains the ResourceMonitor class and aliquot sequence function
-- `tests/`: Directory containing test files
-- `pyproject.toml`: Poetry configuration and project metadata
-
 ## Contributing
 
-Contributions to Math-Sim are welcome! Please feel free to submit a Pull Request.
+Contributions to Math-Sim are welcome! Please feel free to submit a Pull Request. When contributing, please:
+
+- Follow the PEP 8 style guide
+- Write unit tests for new features
+- Document any concurrency patterns used
+- Ensure all tests pass before submitting a PR
+
+## Future Plans
+
+- Implement a GUI for easy interaction with simulations
+- Develop more advanced parallel algorithms
+- Create a web interface for running simulations
+- Explore integration with distributed computing frameworks
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Thanks to all contributors and users of this project
-- Inspired by the fascinating world of number theory and the importance of resource management in computing
