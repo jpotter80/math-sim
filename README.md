@@ -16,7 +16,7 @@ Math-Sim is a Python-based project for mathematical simulations and visualizatio
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/math-sim.git
+   git clone https://github.com/jpotter80/math-sim.git
    cd math-sim
    ```
 
