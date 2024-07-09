@@ -1,30 +1,18 @@
-# Math-Sim: Mathematical Simulations with Concurrent Processing
+# Math-Sim
 
-Math-Sim is a Python project that combines mathematical simulations, particularly in number theory, with resource monitoring capabilities. It provides tools to run algorithms while tracking and visualizing memory and CPU usage, with a focus on efficiency, safety, and robustness.
+Math-Sim is a Python-based project for mathematical simulations and visualizations. It provides implementations and visualizations for various mathematical concepts and algorithms.
 
 ## Features
 
-- Implementation of number theory algorithms:
-  - Aliquot sequences
-  - Sieve of Eratosthenes for prime number generation
-  - Integer factorization
-- Real-time resource monitoring (memory and CPU usage)
-- Concurrent execution of algorithms for improved performance
-- Visualization of resource usage over time
-- Comprehensive test suite with timeout mechanisms
-
-## New: Concurrency Support
-
-We're excited to announce that Math-Sim now supports concurrent execution of algorithms. This new feature allows for:
-
-- Parallel processing of multiple algorithms
-- Improved performance on multi-core systems
-- Enhanced responsiveness in the upcoming GUI
-- More efficient resource utilization
+- Aliquot Sequence generation and visualization
+- Collatz Conjecture simulation and analysis
+- Fibonacci Sequence generation and Golden Ratio visualization
+- Sieve of Eratosthenes for prime number generation
+- Prime number distribution and Ulam spiral visualizations
+- Resource monitoring for performance analysis
+- Parallel processing capabilities for improved efficiency
 
 ## Installation
-
-Ensure you have Python 3.12+ and Poetry installed on your system. Then follow these steps:
 
 1. Clone the repository:
    ```
@@ -32,46 +20,64 @@ Ensure you have Python 3.12+ and Poetry installed on your system. Then follow th
    cd math-sim
    ```
 
-2. Install dependencies using Poetry:
+2. Create a virtual environment (optional but recommended):
    ```
-   poetry install
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+
+3. Install the required packages:
+   ```
+   pip install -r requirements.txt
    ```
 
 ## Usage
 
-To run a concurrent simulation:
-
-```python
-from math_sim.concurrent_math_sim import run_concurrent_simulations
-
-results = run_concurrent_simulations(aliquot_input=220, sieve_input=100, factorize_input=84)
-print(results)
-```
-
-## Running Tests
-
-To run the test suite:
+Run the main script with various options to execute different simulations:
 
 ```
-poetry run pytest
+python -m math_sim.main [OPTIONS]
 ```
 
-## Contributing
+Available options:
+- `--demo`: Run a demonstration of all operations
+- `--aliquot N`: Generate and visualize Aliquot sequence starting from N
+- `--collatz N`: Generate and visualize Collatz sequence starting from N
+- `--fibonacci N`: Generate and visualize Fibonacci sequence with N terms
+- `--sieve N`: Generate primes and visualize distribution up to N
+- `--factorize N`: Factorize the number N
+- `--parallel-aliquot START COUNT`: Generate multiple Aliquot sequences in parallel
+- `--parallel-factorize N [N ...]`: Factorize multiple numbers in parallel
 
-Contributions to Math-Sim are welcome! Please feel free to submit a Pull Request. When contributing, please:
+Example:
+```
+python -m math_sim.main --collatz 27
+```
 
-- Follow the PEP 8 style guide
-- Write unit tests for new features
-- Document any concurrency patterns used
-- Ensure all tests pass before submitting a PR
+## Development
 
-## Future Plans
+To contribute to the project:
 
-- Implement a GUI for easy interaction with simulations
-- Develop more advanced parallel algorithms
-- Create a web interface for running simulations
-- Explore integration with distributed computing frameworks
+1. Fork the repository
+2. Create a new branch for your feature
+3. Implement your changes
+4. Write or update tests as necessary
+5. Submit a pull request
+
+Please refer to the CONTRIBUTING.md file for more detailed guidelines.
+
+## Testing
+
+Run the test suite using pytest:
+
+```
+pytest
+```
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contact
+
+For questions or suggestions, please open an issue on the GitHub repository.
